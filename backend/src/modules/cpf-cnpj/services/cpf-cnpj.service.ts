@@ -14,7 +14,7 @@ export class CpfCnpjService {
   async create(document: string): Promise<CpfCnpj> {
     const isValid = this.validateCpfCnpj(document);
 
-    if (!isValid) throw new Error('Documento inválido');
+    if (!isValid) throw new NotFoundException('Documento inválido');
 
     return this.cpfCpnjRepository.create(document);
   }
