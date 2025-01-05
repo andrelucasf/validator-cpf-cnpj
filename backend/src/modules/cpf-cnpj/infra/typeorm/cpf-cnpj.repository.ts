@@ -47,6 +47,6 @@ export class CpfCnpjRepository implements ICpfCnpjRepository {
       throw new NotFoundException('Documento não encontrado');
     }
 
-    await this.delete(document);
+    await this.cpfCnpjRepository.delete(cpfCnpj.id);
   }
 }
