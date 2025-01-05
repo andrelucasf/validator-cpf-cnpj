@@ -10,16 +10,12 @@ A aplicação é dividida em três partes principais:
 
 A aplicação foi containerizada com Docker e pode ser executada facilmente usando `docker-compose`.
 
----
-
 ## Requisitos
 
 Antes de iniciar, certifique-se de que você tem as seguintes ferramentas instaladas:
 
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
-
----
 
 ## Instalação
 
