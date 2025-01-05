@@ -1,8 +1,23 @@
-# React + Vite
+## Descrição
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositório contém o frontend para a aplicação de validação de CPF/CNPJ, desenvolvido com **React** e **TypeScript**, utilizando **Vite** como bundler.
 
-Currently, two official plugins are available:
+## Configuração do Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Para instalar as dependências do projeto, execute o seguinte comando:
+
+```bash
+$ npm install
+```
+
+## Compilar e Rodar o Projeto
+
+Para rodar o projeto em diferentes modos, utilize os seguintes comandos:
+
+```bash
+# Modo de desenvolvimento
+$ npm run dev
+
+# Build do projeto
+$ npm run build
+```

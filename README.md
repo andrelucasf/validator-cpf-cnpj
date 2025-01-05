@@ -91,3 +91,13 @@ Os testes estão localizados na pasta /backend, e para executá-los, basta rodar
 cd backend
 npm run test
 ```
+
+## Considerações Finais
+
+Caso não queira utilizar o Docker, você pode rodar o frontend e o backend separadamente, conforme o README de cada repositório:
+
+Frontend: Siga as instruções no README do diretório /frontend para rodar o projeto com Node.js e React localmente.
+
+Backend: Siga as instruções no README do diretório /backend para rodar a API com Node.js e NestJS localmente.
+
+Se tiver alguma dúvida ou precisa de mais informações, sinta-se à vontade para entrar em contato!
