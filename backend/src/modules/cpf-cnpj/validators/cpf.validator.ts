@@ -17,16 +17,6 @@ export function validateCpf(document: string): boolean {
     return false;
   }
 
-  // Função para calcular o dígito verificador
-  const calculateDigit = (digits: number[]): number => {
-    const sum = digits.reduce(
-      (acc, digit, index) => acc + digit * (digits.length + 1 - index),
-      0,
-    );
-    const remainder = sum % 11;
-    return remainder < 2 ? 0 : 11 - remainder;
-  };
-
   // Converte os primeiros 9 dígitos em um array de números
   const digits = document.split('').map(Number);
 
@@ -36,3 +26,13 @@ export function validateCpf(document: string): boolean {
 
   return firstDigitIsValid && secondDigitIsValid;
 }
+
+// Função para calcular o dígito verificador
+const calculateDigit = (digits: number[]): number => {
+  const sum = digits.reduce(
+    (acc, digit, index) => acc + digit * (digits.length + 1 - index),
+    0,
+  );
+  const remainder = sum % 11;
+  return remainder < 2 ? 0 : 11 - remainder;
+};

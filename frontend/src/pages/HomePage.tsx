@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Grid2, Typography } from "@mui/material";
-import CpfCnpjForm from "../components/CpfCnpjForm";
-import CpfCnpjTable from "../components/CpfCnpjTable";
+import CpfCnpjTable from "../components/table/CpfCnpjTable";
+import CpfCnpjForm from "../components/form/CpfCnpjForm";
 
 const HomePage: React.FC = () => {
   const [reload, setReload] = useState(false);

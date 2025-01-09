@@ -7,9 +7,9 @@ import {
   Container,
   Grid2,
 } from "@mui/material";
-import axios from "axios";
 import SearchIcon from "@mui/icons-material/Search";
 import AddIcon from "@mui/icons-material/Add";
+import { addDocument, consultDocument } from "../../services/apiService";
 
 interface Props {
   onAdd: () => void;
@@ -28,14 +28,14 @@ const CpfCnpjForm: React.FC<Props> = ({ onAdd }) => {
     setError(null);
     setSuccess(null);
     try {
-      await axios.post("http://localhost:3000/cpf-cnpj", { document });
+      await addDocument(document);
+
       setDocument("");
       setSuccess("Documento adicionado com sucesso!");
       onAdd();
     } catch (error: any) {
       setError(
-        error.response?.data?.message ||
-          "Erro ao adicionar documento. Tente novamente."
+        error.message || "Erro ao adicionar documento. Tente novamente."
       );
     } finally {
       setLoading(false);
@@ -48,18 +48,16 @@ const CpfCnpjForm: React.FC<Props> = ({ onAdd }) => {
     setError(null);
     setConsultResult(null);
     try {
-      const response = await axios.get(
-        `http://localhost:3000/cpf-cnpj/consult/${document}`
-      );
-      if (response.data.isValid) {
+      const response = await consultDocument(document);
+
+      if (response.isValid) {
         setConsultResult(`Documento válido!`);
       } else {
         setError(`Documento inválido!`);
       }
     } catch (error: any) {
       setError(
-        error.response?.data?.message ||
-          "Erro ao consultar documento. Tente novamente."
+        error.message || "Erro ao consultar documento. Tente novamente."
       );
     } finally {
       setLoading(false);
@@ -110,7 +108,6 @@ const CpfCnpjForm: React.FC<Props> = ({ onAdd }) => {
         </Grid2>
       </Grid2>
 
-      {/* Exibição de Alert para erros */}
       <Collapse in={!!error}>
         <Alert severity="error" sx={{ marginTop: 2 }}>
           {error}
